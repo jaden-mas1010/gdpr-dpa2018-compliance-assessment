@@ -1,0 +1,21 @@
+# Nikto Web Server Scan
+# Target: http://simulated-webapp.local
+# Date: 2026-08-12
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          192.168.1.50
++ Target Hostname:    simulated-webapp.local
++ Target Port:        80
++ Start Time:         2026-08-12 17:56:00
+---------------------------------------------------------------------------
++ Server: Apache/2.4.29 (Ubuntu)
++ The X-Frame-Options header is not set.
++ The Content-Security-Policy header is missing.
++ The X-Content-Type-Options header is not set.
++ The Referrer-Policy header is not set.
++ Allowed HTTP Methods: GET, POST, HEAD
++ Cookie without Secure flag detected.
++ No TLS detected; server is running on cleartext HTTP.
+
++ Scan completed.
