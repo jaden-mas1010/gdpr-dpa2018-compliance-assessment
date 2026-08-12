@@ -1,0 +1,12 @@
+# HTTP Traffic Capture (Simulated)
+# Captured via tcpdump
+# Date: 2026-08-12
+
+17:56:12.456789 IP 192.168.1.100 > 192.168.1.50: POST /login HTTP/1.1
+Host: simulated-webapp.local
+Content-Length: 32
+
+username=jaden&password=Password123
+
+# Cleartext transmission observed.
+# No TLS handshake detected.
