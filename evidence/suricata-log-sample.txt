@@ -1,0 +1,10 @@
+# Suricata Log Sample
+# IDS Alert Extract
+# Date: 2026-08-12
+
+{"timestamp":"2026-08-12T17:56:12.123456","src_ip":"192.168.1.100","dest_ip":"192.168.1.50","alert":{"signature_id":2023456,"signature":"HTTP cleartext login credentials","category":"Potential Data Leak"},"http":{"hostname":"simulated-webapp.local","url":"/login","http_user_agent":"Mozilla/5.0","content":"username=jaden&password=Password123"}}
+
+# Notes:
+# - Cleartext credentials detected in HTTP POST request.
+# - Violates GDPR Article 5(1)(f) and Article 32.
+# - Logs contain unnecessary personal data (username).
