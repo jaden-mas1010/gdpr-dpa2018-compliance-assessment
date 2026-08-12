@@ -1,0 +1,21 @@
+# Burp Suite Header Inspection
+# Target: http://simulated-webapp.local
+# Date: 2026-08-12
+
+GET / HTTP/1.1
+Host: simulated-webapp.local
+User-Agent: Mozilla/5.0
+
+HTTP/1.1 200 OK
+Server: Apache/2.4.29 (Ubuntu)
+Content-Type: text/html
+
+# Missing Security Headers:
+- Content-Security-Policy
+- X-Frame-Options
+- X-Content-Type-Options
+- Referrer-Policy
+- Strict-Transport-Security (HSTS)
+
+# Cookies:
+Set-Cookie: sessionid=abc123; Path=/   # Missing Secure & HttpOnly flags
