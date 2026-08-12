@@ -1,134 +1,121 @@
 # GDPR & UK DPA 2018 Compliance Assessment
-
-## 1. Introduction
-This project presents a practical GDPR and UK Data Protection Act 2018 compliance assessment performed on a simulated web application. The goal is to demonstrate how technical security findings discovered through common security tools can be translated into legal and regulatory obligations — a core skill for SOC analysts, security engineers, and compliance‑driven cybersecurity roles in the UK.
-
-The assessment focuses on identifying weaknesses in transport security, logging practices, security headers, and authentication controls, and then mapping each issue to relevant GDPR Articles and DPA 2018 principles. This bridges the gap between hands‑on technical testing and real‑world compliance expectations.
+*A security‑driven compliance review of a simulated web application, mapping technical findings to regulatory obligations and providing SOC‑style remediation.*
 
 ---
 
-## 2. Project Scope
+## 📌 Overview
+This project evaluates a simulated web application against **GDPR** and the **UK Data Protection Act 2018**, demonstrating how technical vulnerabilities translate into **legal risk**, **business impact**, and **actionable remediation**.
 
-### Target
-A dummy/simulated web application designed to mimic a typical small‑scale service handling basic personal data.
-
-### Data Processed
-- Name  
-- Email address  
-- Login credentials (username/password)
-
-### Assessment Focus
-- Transport layer security  
-- Application security headers  
-- Logging and data minimisation  
-- Password and authentication policies  
-- Breach readiness and secure processing obligations  
+It showcases the ability to bridge **technical security testing**, **SOC‑style analysis**, and **governance/compliance requirements** — a key skillset for modern cybersecurity roles.
 
 ---
 
-## 3. Methodology
-
-The assessment follows a simple, repeatable workflow:
-
-1. **Reconnaissance & Scanning**  
-   - Nmap for service discovery and TLS checks  
-   - Nikto for web server misconfigurations  
-
-2. **Application Testing**  
-   - Burp Suite for manual inspection of HTTP traffic  
-   - Header analysis (CSP, HSTS, X‑Frame‑Options, etc.)
-
-3. **Log Review**  
-   - Suricata IDS logs  
-   - Manual inspection of application logs for PII exposure  
-
-4. **Compliance Mapping**  
-   - Each technical finding is mapped to GDPR Articles 5, 25, 30, 32, and 33  
-   - Relevant UK DPA 2018 principles are referenced where applicable  
-
-5. **Recommendations**  
-   - SOC‑style remediation steps  
-   - Practical hardening measures  
+## 🎯 Objectives
+- Identify security weaknesses affecting personal data processing  
+- Map each finding to GDPR/DPA 2018 articles  
+- Assess risk severity using SOC‑aligned methodology  
+- Provide clear, prioritized remediation steps  
+- Demonstrate technical → legal translation skills  
 
 ---
 
-## 4. Key Findings & GDPR/DPA‑2018 Mapping
+## 🔍 Methodology
 
-### 4.1 Insecure Transport (HTTP instead of HTTPS)
-**Technical Risk:**  
-Credentials and personal data transmitted in cleartext, vulnerable to interception.
+### Technical Testing
+- **Nmap** — TLS & service enumeration  
+- **Nikto** — web server misconfiguration scanning  
+- **Burp Suite** — manual HTTP inspection  
+- **Suricata IDS** — log review & PII exposure checks  
 
+### Compliance Mapping
+- GDPR Articles **5**, **25**, **30**, **32**, **33**  
+- UK DPA 2018 principles  
+- CIA‑based impact scoring  
+- Likelihood × impact risk classification  
+
+### Reporting
+- SOC‑style remediation  
+- Business impact explanation  
+- Evidence‑based findings  
+
+---
+
+## 🛡 Key Findings & GDPR/DPA Mapping
+
+### 1. Insecure Transport (HTTP instead of HTTPS)
+**Risk:** Cleartext transmission of credentials & personal data  
 **GDPR/DPA Impact:**  
-- Article 5(1)(f): Integrity & confidentiality  
-- Article 32: Failure to implement appropriate security controls  
-- Article 33: Breach notification required if exploited  
-
-**Recommendation:**  
-Enforce TLS 1.2+, enable HSTS, secure cookies, and disable weak ciphers.
+- Art. 5(1)(f) — Integrity & confidentiality  
+- Art. 32 — Appropriate security controls  
+- Art. 33 — Breach notification if exploited  
+**Remediation:** Enforce TLS 1.2+, enable HSTS, secure cookies, disable weak ciphers  
 
 ---
 
-### 4.2 Missing Security Headers
-**Technical Risk:**  
-Exposure to clickjacking, XSS, MIME‑type confusion, and other client‑side attacks.
-
+### 2. Missing Security Headers
+**Risk:** Exposure to clickjacking, XSS, MIME‑type confusion  
 **GDPR/DPA Impact:**  
-- Article 25: Lack of privacy‑by‑design controls  
-- Article 32: Insufficient hardening measures  
-
-**Recommendation:**  
-Implement CSP, X‑Frame‑Options, X‑Content‑Type‑Options, Referrer‑Policy.
+- Art. 25 — Privacy‑by‑design  
+- Art. 32 — Insufficient hardening  
+**Remediation:** Implement CSP, X‑Frame‑Options, X‑Content‑Type‑Options, Referrer‑Policy  
 
 ---
 
-### 4.3 Excessive Logging of Personal Data
-**Technical Risk:**  
-Logs contain unnecessary PII, increasing breach impact and retention liability.
-
+### 3. Excessive Logging of Personal Data
+**Risk:** Logs contain unnecessary PII, increasing breach impact  
 **GDPR/DPA Impact:**  
-- Article 5(1)(c): Data minimisation  
-- Article 30: Records of processing activities  
-
-**Recommendation:**  
-Redact PII, apply log rotation, enforce retention limits, and restrict access.
+- Art. 5(1)(c) — Data minimisation  
+- Art. 30 — Records of processing  
+**Remediation:** Redact PII, apply log rotation, enforce retention limits, restrict access  
 
 ---
 
-### 4.4 Weak Password Policy
-**Technical Risk:**  
-Higher likelihood of account compromise and unauthorised access.
-
+### 4. Weak Password Policy
+**Risk:** Higher likelihood of account compromise  
 **GDPR/DPA Impact:**  
-- Article 32: Inadequate protection of personal data  
-
-**Recommendation:**  
-Enforce strong password complexity, rate limiting, MFA, and secure hashing.
+- Art. 32 — Inadequate protection  
+**Remediation:** Enforce strong complexity, rate limiting, MFA, secure hashing  
 
 ---
 
-## 5. Tools Used
-- Nmap — service discovery, TLS checks  
-- Nikto — web server vulnerability scanning  
-- Burp Suite — manual HTTP inspection  
-- Suricata IDS — network traffic and alert review  
-- Manual log analysis — PII exposure and retention issues  
+## 🛠 Tools Used
+- Nmap  
+- Nikto  
+- Burp Suite  
+- Suricata IDS  
+- Manual log analysis  
 
 ---
 
-## 6. Outcome
-This project demonstrates how technical security assessments directly support GDPR and UK DPA 2018 compliance. By mapping vulnerabilities to legal obligations, the assessment highlights the importance of:
+## 📈 Outcome
+This assessment demonstrates how technical testing supports GDPR & UK DPA 2018 compliance by addressing:
 
 - Secure processing  
 - Data minimisation  
 - Privacy‑by‑design  
 - Breach readiness  
-- Proper logging and retention  
-- Strong authentication controls  
+- Logging & retention hygiene  
+- Authentication hardening  
 
-The result is a concise, practical example of compliance‑aware security testing suitable for academic submissions, SOC analyst portfolios, and professional development.
+It serves as a practical, portfolio‑ready example for:
+
+- SOC analysts  
+- Security engineers  
+- GRC practitioners  
+- Academic coursework  
 
 ---
 
-## 7. License
-This project is provided for educational and professional development purposes.
+
+---
+
+## 👤 Author
+**Jaden Julius Mascarenhas**  
+Cybersecurity Analyst — SOC / IR / GRC  
+Master’s in Information & Network Security (Kingston University)
+
+---
+
+## 📄 License
+Educational & professional development use.
 
